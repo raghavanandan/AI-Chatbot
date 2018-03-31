@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Chat Bot</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body class="chat">
+
+    <!-- <div class="chat__sidebar">
+      <h3>Members</h3>
+      <div id="users"></div>
+    </div> -->
+
+    <div class="chat__main">
+      <ol id="convo" class="chat__messages"></ol>
+
+      <div class="chat__footer">
+        <form id="chat-form">
+          <input type="text" name="message" id="msg-box" placeholder="Enter the message" autofocus autocomplete="off"/>
+          <button id="send">Send</button>
+        </form>
+        <button id="location">Send location</button>
+      </div>
+    </div>
+
+    <script id="message-template" type="text/template">
+      <li class="message">
+        <div class="message__title">
+          <h4>{{from}}</h4>
+          <span>{{createdAt}}</span>
+        </div>
+        <div class="message__body">
+          <p>{{text}}</p>
+        </div>
+      </li>
+    </script>
+
+    <script id="location-message-template" type="text/template">
+      <li class="message">
+        <div class="message__title">
+          <h4>{{from}}</h4>
+          <span>{{createdAt}}</span>
+        </div>
+        <div class="message__body">
+          <p>
+            <a href="{{url}}" target="_blank">My current location</a>
+          </p>
+        </div>
+      </li>
+    </script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/libs/jquery.js"></script>
+    <script src="/js/libs/moment.js"></script>
+    <script src="/js/libs/mustache.js"></script>
+    <script src="/js/libs/deparam.js"></script>
+    <script src="/js/client.js"></script>
+  </body>
+</html>
